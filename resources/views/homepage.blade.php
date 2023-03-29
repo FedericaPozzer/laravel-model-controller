@@ -12,19 +12,21 @@
 <body>
     <div class="container">
         @if(isset($movies))
-        <h1>MOVIES:</h1>
+        <h1 class="mt-3">MOVIES:</h1>
 
         <div class="row row-cols-5">
             @foreach($movies as $movie)
-            <div class="col">
+            <div class="col mt-3">
 
-                <div class="card text-bg-secondary mb-3" style="max-width: 18rem;">
-                    <div class="card-header">Header</div>
+                <div class="card text-bg-secondary mb-3 h-100">
+                    <h5 class="card-header"> {{ $movie->title }} </h5>
                     <div class="card-body">
-                        <h5 class="card-title">Secondary card title</h5>
-                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                        <p class="card-title">Titolo originale: {{ $movie->original_title }} </p>
+                        <p class="card-text">Nazionalità: {{ $movie->nationality }} <br>Data d'uscita: {{ $movie->date }} </p>
+                        <p>Voto medio: {{ $movie->vote }} </p>
                     </div>
                 </div>
+
             </div>
             @endforeach
         </div>
